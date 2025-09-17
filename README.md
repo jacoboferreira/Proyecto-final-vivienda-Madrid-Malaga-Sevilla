@@ -16,7 +16,7 @@ El proyecto consta de 3 bloques. He querido hacer un tipo de Análisis o uso de 
 	o	Herramienta: Excel.
 	o	Ciudad: Málaga.
 	o	Informe: Precios, Unidades, Rentabilidad.
-	o	Obtención de datos: Aplicación IO.net
+	o	Obtención de datos: Aplicación Listly.io
 •	Bloque 2:
 	o	Herramienta: Power BI.
 	o	Ciudad: Sevilla.
@@ -61,7 +61,45 @@ Mediante este proceso he querido desarrollar y experimentar mis conocimientos ap
 
 ## **3. Instalaciones y requisitos**
 
+Para ejecutar este proyecto, es necesario contar con las siguientes herramientas:
 
+- Microsoft Excel
+- Power Query
+- Python
+	- Padas: Manejo y análisis de datos en tablas.
+	- Numpy: Cálculos numéricos y matrices.
+	- request: Peticiones HTTP a páginas o APIs.
+	- bs4: Extracción de datos de HTML/XML (web scraping).
+	- time: Control del tiempo y pausas.
+	- random: Generación de números aleatorios.
+	- selenium: Automatización de navegadores web.
+	- undetected_chromedriver: Selenium sin bloqueos anti-bot.
+	- math: Funciones matemáticas.
+	- os: Manejo de archivos y sistema operativo.
+	- glob: Búsqueda de archivos por patrones.
+	- lxml: Procesamiento rápido de HTML/XML.
+	- matplotlib: Visualización de datos en gráficos.
+	- sklearn - MinMaxScaler: Normaliza valores numéricos a un rango (ej. 0 a 1).
+	- tensorflow - Sequential: Modelo secuencial de capas en red neuronal.
+	- tensorflow - LSTM: Capa de memoria a largo plazo para series temporales.
+	- tensorflow - Dense: Capa totalmente conectada en redes neuronales.
+	- base64: Codificación y decodificación de datos en Base64.
+	- json: Lectura y escritura de datos en formato JSON.
+	- literal_eval: Evalúa cadenas como estructuras de datos seguras (listas, diccionarios, etc.).
+	- seaborn: Visualización estadística con gráficos atractivos.
+	- re: Expresiones regulares para búsqueda y manipulación de texto.
+	- LabelEncoder: Convierte etiquetas categóricas a valores numéricos.
+	- SimpleImputer: Rellena valores faltantes en los datos.
+	- mean_squared_error: Métrica de error cuadrático medio en modelos.
+	- r2_score: Métrica de precisión de modelos de regresión.
+	- train_test_split: Divide datos en entrenamiento y prueba.
+	- StandardScaler: Estandariza datos (media 0, varianza 1).
+	- LinearRegression: Modelo de regresión lineal.
+	- RandomForestRegressor: Modelo de regresión basado en bosques aleatorios.
+	- GradientBoostingRegressor: Modelo de regresión basado en boosting de gradiente.
+	- subprocess: Ejecuta comandos del sistema desde Python.
+- Idealista
+- Listly.io
 
-
+## **4. Explicación de los datos**
 
