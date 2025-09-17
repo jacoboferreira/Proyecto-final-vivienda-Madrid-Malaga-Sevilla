@@ -137,3 +137,49 @@ En el caso del bloque 3 del proyecto se va a explicar también los datos:
 	- **Nº DE EDIFICIOS:** Numero de edificios construidos en España.
 	- **Nº DE VIVIENDAS:** Numero de viviendas construidas en España.
 
+## **5. Proceso llevado a cabo**
+Voy a explicar el proceso por partes, ya que a cada parte lo he querido crear con la intención de aprender, usar diferentes herramientas y metodología de obtener los datos.
+- ### **5.1. Bloque 1**
+Este primer bloque es una continuación y mejora del primer proyecto de análisis compra y alquiler. He mejorado el numero de viviendas, la obtención de información nueva como la ciudad y área, baños, etc. Expongo a continuación el proceso llevado.
+
+**5.1.1 Descarga de datos**
+Se utilizo la aplicación utilizada anteriormente pero con una suscripción mejor, la cual me permitía descargar de forma ilimitada la información. Seguía tenia las limitaciones de solo poder obtener la información de las portadas de los anuncios de idealista, a esto se le suma que en cada pagina solo tiene un máximo de 30 anuncios.
+El problema que tiene esta metodología es que tienes que repetir mucho el proceso y la información no se descarga ordenadamente. Cuando abres el archivo podías encontrar diferentes ordenes. Además, para poder obtener los baños antes de descargar la información tenia que filtrar en idealista. Cuando tenía descargada la información de un área, seleccionaba todos los documentos y con el comando de f2 le daba el nombre que quería y se ponían en todos con la diferencia de un numero entre paréntesis a si luego podía utilizarlo luego para poner el nombre del área en la columna.
+En el bloque puedes encontrar las 3 carpetas de alquiler, compra y evolutivo. De alquiler tengo 111 Excel con información. De compra 426 y de evolutivo 17.
+
+**5.1.2 Limpieza de los datos**
+Primero, se analizó qué datos se descargaban, su formato y su relevancia. Luego, se estructuraron y dividieron para el análisis.
+
+Inicialmente, la información no seguía un patrón uniforme, por lo que se tuvo que ordenar manualmente eliminando, añadiendo o cambiando el orden de las columnas.
+
+Una vez organizado, los datos se procesaron con Power Query en Excel para realizar la limpieza: 
+- Extracción de información según delimitadores.
+- División de columnas.
+- Inserción de nuevas columnas.
+- Reemplazo de valores.
+
+Para los documentos de compras, se utilizó un código en Python para estructurar la información en columnas, quedando con la misma estructura que los documentos de alquiler.
+
+**5.1.3 Unión de la información**
+Los datos obtenidos estaban divididos por ciudades y en cada documento había 32 filas. Mediante código de Python su puedo automatizar el proceso de unión, cogiendo todos lo documentos de la carpeta y uniéndolos, además como he mencionado antes añadió una columna con el nombre del archivo a cada fila. Este proceso se hizo con las tres partes. 
+El último documento creado para este análisis fue el **"Análisis Malaga"**, consta de 11 hojas:
+
+1. **Tabla de alquiler: ** Información consolidada de los pisos en alquiler. Tiene 3034 filas y 18 columnas.
+2. **Tabla de compra: ** Información consolidada de los pisos en venta. Tiene 12498 filas y 18 columnas.
+3. **Gráficos:** Hoja donde creo los tablas dinámicas, gráficos y segmentadores para el Dashboard-€.
+4. **Dashboard-€:** Visualización de las características de los pisos más rentables para compra y alquiler, así como la evolución y % de cambio de los precios.
+5. **Dashboard-UN:** Visualización de la cantidad de unidades disponibles.
+6. **Dashboard-HIPO:** Hoja en la que te permite calcular dos casos de hipoteca y rentabilidad.
+7. **Hipoteca_1:** hojas donde se hacen los cálculos para la presentación en el dashboard-hipo.
+8. **Hipoteca_1:** hojas donde se hacen los cálculos para la presentación en el dashboard-hipo.
+9. **ITP:** hojas donde crean listas con los datos de ITP de las CCAA y una estimación del alquiler que se va a tener, para utilizar en la dashboard-hipo.
+6. **Alquiler_provincia:** Tabla con los precios medios por metro cuadrado según fechas. También puedes encontrar las tablas dinámicas, gráficos y sementadores para utilizar en el Dashboard-€.
+7. **Venta_provincia:** Tabla con los precios medios por metro cuadrado según fechas. También puedes encontrar las tablas dinámicas, gráficos y sementadores para utilizar en el Dashboard-€.
+
+**5.1.4 Explicación de los dashboard y uso**
+-	**Dashboard-€:** Tiene se compone de 4 partes. La de arriba, contiene el titulo y tres cajas. La llamada ‘Análisis compra’, aparece la información económica y unidades de las viviendas en compra. La siguiente caja, análisis alquiler’ es igual a la anterior pero de las viviendas de alquiler. Por ultimo de este apartado, ‘rec compra-alquiler’ donde se puede ver los meses y años que se tardaría en recuperar la inversión. 
+Hay que mencionar que las cifras que aparecen son dinámicas y se cambian con los filtros del lateral derecho. Paso a explicarlo
+El apartado de los filtros está dividido en dos, alquile y compra. En ello puedes segmentar la información de las cajas y los gráficos a explicar a continuación. Se puede segmentar por área, vivienda, ascensor, garaje, habitaciones, baños, exterior-interior y rango de coste.
+Los gráficos centrales, es donde se observa la información principal del dashboard. Como los apartados anteriores se divide en dos. Alquiler y compra, en estos se puede observar los siguientes graficos, el primero precio medio, en el segundo el precio medio en las plantas que se encuentran las viviendas y por ultimo las el coste medio por habitaciones que tiene la vivienda.
+Por último, explicar de este dashboard, la zona de los gráficos de líneas de alquiler y compra. En ellos se puede ver como ha evolucionado el coste medio de compra y alquiler de las áreas de Málaga. En el centro, separando los gráficos hay segmentadores para poder filtrar por área y dos tipos de fechas. Estos dos últimos segmentadores solo afectan a las cajas que tienen a la derecha donde se puede hacer una comparación de precio de una fecha a otra. 
+Mencionar que hay segmentadores que afectan a todas las cajas y graficos pero hay otras que no. Principalmente se hizo eso para los graficos del centro y que no se viese afectado el grafico de habitaciones y no filtrase por su propio segmentador.
