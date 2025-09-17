@@ -128,6 +128,7 @@ Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calc
 	- **Negocio:** Si valor pertenece a compra o alquiler.
 
 En el caso del bloque 3 del proyecto se va a explicar también los datos:
+
 	- **Fecha:** Fecha en años a la que hace referencia.
 	- **Coste:** Coste del metro cuadrado a la fecha de la Comunidad de Madrid.
 	- **SM Madrid**: Evolución del salario bruto.
