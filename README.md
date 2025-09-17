@@ -121,7 +121,7 @@ Por eso voy a exponer las principales columnas que tienen los archivos:
 
 Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calculadas, negocio, ID del anuncio**.
 
-- **Archivos evolutivos:**
+- Archivos evolutivos:
 	- **Fecha:** Fecha en meses a la que hace referencia.
 	- **Coste:** Coste del metro cuadrado a la fecha.
 	- **Área:** Área de la ciudad donde se encuentra el inmueble.
