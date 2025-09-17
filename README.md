@@ -102,4 +102,38 @@ Para ejecutar este proyecto, es necesario contar con las siguientes herramientas
 - Listly.io
 
 ## **4. Explicación de los datos**
+Para comprender y llevar a cabo el análisis, es importante tener conocimiento del sector inmobiliario (*real estate*). 
+Como he mencionado anteriormente el proyecto consta de 3 bloques. En su mayoría los datos son los mismos. Dentro de cada bloque del proyecto se dividen en otros tres apartados**compra, alquiler y evolutivo**. En el caso del ultimo también se han obtenido datos de páginas web oficiales del estado. 
+Hay que tener claro que los datos cuando se usan en herramientas como Python, a la hora que va avanzando el proyecto se pueden ir cambiando el numero de columnas y el nombre. 
+Por eso voy a exponer las principales columnas que tienen los archivos:
+	- **Archivos de alquiler y compra:**
+	- **Título:** Nombre del anuncio.
+	- **Ciudad:** Ciudad en la que se encuentra la vivienda.
+	- **Coste:** Precio en euros.
+	- **Habitaciones:** Número de habitaciones.
+	- **Metros cuadrados:** Superficie total del inmueble.
+	- **Planta:** Altura en la que esta el piso
+	- **Vivienda:** Tipo de inmueble (piso o casa).
+	- **EXT – INT:** Si la vivienda da al exterior o interior.
+	- **Área:** Área de la ciudad donde se encuentra el inmueble.
+	- **Baños:** Numero de baños tiene el inmueble.
+	- **Coste/Metro:** Precio del metro cuadrado.
+
+Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calculadas, negocio, ID del anuncio**.
+
+- **Archivos evolutivos:
+	- **Fecha:** Fecha en meses a la que hace referencia.
+	- **Coste:** Coste del metro cuadrado a la fecha.
+	- **Área:** Área de la ciudad donde se encuentra el inmueble.
+	- **Negocio:** Si valor pertenece a compra o alquiler.
+
+En el caso del bloque 3 del proyecto se va a explicar también los datos:
+	- ** Fecha:** Fecha en años a la que hace referencia.
+	- **Coste:** Coste del metro cuadrado a la fecha de la Comunidad de Madrid.
+	- **SM Madrid**: Evolución del salario bruto.
+	- **SB anual:** Salario bruto anual de España.
+	- **Poblacion Madrid:** numero de residentes en la comunidad de Madrid.
+	- **Nº DE LICENCIA CONSTRUCCION:** Numero de licencias concedidas en España.
+	- **Nº DE EDIFICIOS:** Numero de edificios construidos en España.
+	- **Nº DE VIVIENDAS:** Numero de viviendas construidas en España.
 
