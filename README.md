@@ -177,9 +177,53 @@ El último documento creado para este análisis fue el **"Análisis Malaga"**, c
 7. **Venta_provincia:** Tabla con los precios medios por metro cuadrado según fechas. También puedes encontrar las tablas dinámicas, gráficos y sementadores para utilizar en el Dashboard-€.
 
 **5.1.4 Explicación de los dashboard y uso**
--	**Dashboard-€:** Tiene se compone de 4 partes. La de arriba, contiene el titulo y tres cajas. La llamada ‘Análisis compra’, aparece la información económica y unidades de las viviendas en compra. La siguiente caja, análisis alquiler’ es igual a la anterior pero de las viviendas de alquiler. Por ultimo de este apartado, ‘rec compra-alquiler’ donde se puede ver los meses y años que se tardaría en recuperar la inversión. 
+-	**Dashboard-€:** 
+Se compone de 4 partes. Está orientado para ver la diferencia económica entre las diferentes características de vivienda. 
+La de arriba, contiene el titulo y tres cajas. La llamada ‘Análisis compra y alquiler’, aparece la información económica y unidades de las viviendas en compra. La siguiente caja, análisis alquiler’ es igual a la anterior pero de las viviendas de alquiler. Por ultimo de este apartado, ‘rec compra-alquiler’ donde se puede ver los meses y años que se tardaría en recuperar la inversión. 
 Hay que mencionar que las cifras que aparecen son dinámicas y se cambian con los filtros del lateral derecho. Paso a explicarlo
 El apartado de los filtros está dividido en dos, alquile y compra. En ello puedes segmentar la información de las cajas y los gráficos a explicar a continuación. Se puede segmentar por área, vivienda, ascensor, garaje, habitaciones, baños, exterior-interior y rango de coste.
-Los gráficos centrales, es donde se observa la información principal del dashboard. Como los apartados anteriores se divide en dos. Alquiler y compra, en estos se puede observar los siguientes graficos, el primero precio medio, en el segundo el precio medio en las plantas que se encuentran las viviendas y por ultimo las el coste medio por habitaciones que tiene la vivienda.
-Por último, explicar de este dashboard, la zona de los gráficos de líneas de alquiler y compra. En ellos se puede ver como ha evolucionado el coste medio de compra y alquiler de las áreas de Málaga. En el centro, separando los gráficos hay segmentadores para poder filtrar por área y dos tipos de fechas. Estos dos últimos segmentadores solo afectan a las cajas que tienen a la derecha donde se puede hacer una comparación de precio de una fecha a otra. 
-Mencionar que hay segmentadores que afectan a todas las cajas y graficos pero hay otras que no. Principalmente se hizo eso para los graficos del centro y que no se viese afectado el grafico de habitaciones y no filtrase por su propio segmentador.
+Los gráficos centrales, es donde se observa la información principal del dashboard. Como los apartados anteriores se divide en dos. Alquiler y compra, en estos se puede observar los siguientes gráficos, el primero precio medio, en el segundo el precio medio en las plantas que se encuentran las viviendas y por ultimo las el coste medio por habitaciones que tiene la vivienda.
+Por último, explicar de este dashboard, la zona de los gráficos de líneas de alquiler y compra. En ellos se puede ver cómo ha evolucionado el coste medio de compra y alquiler de las áreas de Málaga. En el centro, separando los gráficos hay segmentadores para poder filtrar por área y dos tipos de fechas. Estos dos últimos segmentadores solo afectan a las cajas que tienen a la derecha donde se puede hacer una comparación de precio de una fecha a otra. 
+Mencionar que hay segmentadores que afectan a todas las cajas y gráficos, pero hay otras que no. Principalmente se hizo eso para los gráficos del centro y que no se viese afectado el grafico de habitaciones y no filtrase por su propio segmentador.
+
+-	**Dashboard-UN:**
+Esta pantalla es similar a la anterior, su intención es que se pueda visualizar el numero de unidades que hay por las diferentes viviendas. En este caso se puede observar 3 partes diferenciadas. 
+Como en el dashboard anterior, en la parte superior podemos encontrar, la caja con el título: ‘Análisis compra y alquiler’. En las siguientes cajas la información que aparece son las unidades de viviendas en venta y alquiler. 
+En el apartado de la derecha están los filtros, los mismos y estructurados iguales. Se ven afectados los filtros de una página a otra.
+En esta pantalla la parte principal lo tiene los gráficos dedicados a visualizar las unidades de las características de los pisos. Me ha parecido interesante dejar el grafico del precio medio de la página anterior, pudiendo ver así el precio de los filtros. Los siguientes graficos están centrados en ver la cantidad de unidades y porcentaje del tipo de viviendas que hay. El siguiente se puede ver si las viviendas se publicitan con garaje, sin garaje o de pago. El ultimo grafico de la derecha nos da el porcentaje y unidades de que las viviendas tengan ascensor. 
+
+-	**Dashboard-HIPO:**
+Esta es la ultimo dashboard de esta parte del proyecto. Te permite comprar dos casos de rentabilidad a la hora de comprar y alquilar una vivienda. Esta pantalla tiene 4 apartados. Antes de empezar la explicación de los 4 apartados mencionar dos cosas importantes, la primer es que solo se tiene que rellenar las celdas que están en azul. Las celdas que están en blanco se rellenan solas con los datos aportados a las azules. Lo siguiente a tener en cuenta son las celdas de color verde, son listas despegables que automáticamente hacen que afecte a la rentabilidad.
+
+Lo primero que voy a explicar, son las dos cajas que están arriba de Caso-1 y Caso-2. En las celdas de color verde podemos elegir la categoría de alquiler que consideremos. Esta elección influye en el porcentaje de tiempo alquilado que vamos a tener la vivienda. Pasando de un fijo de un 100% a un pesimista del 50%.
+
+Los dos siguientes apartados son similares a los ya explicados en los Dashboard anteriores. En ellos podemos encontrar las cajas con los precios y unidades de las categorías seleccionadas en los segmentadores. Además, las dos ultimas cajas de la derecha donde aparece el titulo de ‘Total a Pagar’ de cada caso. En el se puede visualizar el total a pagar de la vivienda, con los gastos de la vivienda, incremento por la hipoteca y gastos previos antes de alquilar la vivienda.
+No me voy a extender en el apartado de los filtros ya que son los mismos que en las pantallas anteriores.
+
+Si me voy a centrar en la parte central. Aquí puedes encontrar los casos para analizar la rentabilidad de dos viviendas. Tiene 4 columnas,
+
+- Primera: Asociado a la compra.
+o	ITP CCAA: Elegir la comunidad autónoma para ver que % de ITP te corresponde.
+o	Precio vivienda: Precio por el que consideras comprar la vivienda.
+o	Cantidad a hipotecar: Cantidad de dinero que vas a solicitar al banco.
+o	% Hipoteca: automáticamente te aparece. Porcentaje de la cantidad total de la vivienda.
+o	Gastos previos: Cantidad de dinero que consideras que te vas a gastar asociados en la compra de la vivienda o inmueble y en reformarlo. 
+
+-	Segunda: Asociado al alquiler.
+o	Alquiler: tendrás que rellenar por la cantidad que consideres el alquiler al mes. El del año se rellenara solo.
+o	Costes: Aquí se tendrá que poner los costes que consideras tendrá la vivienda durante un año. Comunidad, IBI, Seguro y más cosas decidas ponerle. En los costes del mes te aparecerán automáticamente.
+o	Facturación: Hay que poner por la cantidad que estimas alquilar la vivienda al mes, se pone automáticamente al año.
+
+- Tercera: asociado a la hipoteca y rentabilidad.
+o	Hipoteca en años: años a los que vas a pedir la hipoteca.
+o	Tipo de interés: El interés por que te concederán la hipoteca.
+o	Cuotas: automáticamente se calcula la cantidad a pagar al mes y al año.
+o	Cash Flow: la cantidad económica que te queda al mes y año, después de pagar los gastos mensuales y la cuota.
+o	Rentabilidad: La rentabilidad que tienes de la vivienda solo contando compra y alquiler.
+o	ROE: Rentabilidad de la vivienda contando los gastos totales.
+
+-	Cuarta: 
+o	Mes: Fecha a la que quieres visualizar el estado del negocio.
+o	Total Ingresado: la cantidad a la económica que se ha facturado hasta la fecha. 
+o	Total Beneficio: la parte de lo ingresado menos los gastos a la fecha.
+o	Total amortizado: cantidad económica y porcentual de la hipoteca a la fecha.
