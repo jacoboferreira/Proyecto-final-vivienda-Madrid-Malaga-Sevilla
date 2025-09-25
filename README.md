@@ -36,8 +36,11 @@ Mediante este proceso he querido desarrollar y experimentar mis conocimientos ap
 ## **2. Estructura del repositorio**
 - 📂 **Bloque 1: ** Proyecto creado con Excel, datos de Málaga, obtenido los datos con IO.
 	- 📂 **Alquiler: ** La carpeta contiene los archivos descargados en sucio de los precios de alquiler Benalmádena, Centro, Estepona, Fuengirola, Marbella y Torremolinos. Están en formato Excel, contienen de 30 a 5 anunció de pisos. Además, tiene un documento de Python que me ayudo a limpiar y ordenar los documentos.
+   
 	- 📂 **Compra: ** La carpeta contiene los archivos descargados en sucio de  los precios de compra Benalmádena, Centro, Estepona, Fuengirola, Marbella y Torremolinos. Están en formato Excel, contienen de 30 a 5 anunció de pisos. Además, tiene un documento de Python que me ayudo a limpiar y ordenar los documentos.
+   
 	- 📂 **Evolutivo 1: ** La carpeta contiene los archivos descargados en sucio del evolutivo del precio/ metro cuadrado de Málaga, Benalmádena, Centro, Estepona, Fuengirola, Marbella y Torremolinos. Están en formato Excel, Además, tiene un documento de Python que me ayudo a limpiar y ordenar los documentos. Dentro de la carpeta hay otra en la que se hacen la predicciones de LSTM y se guarda por distrito los datos con la predicción a 2036.
+   
 	- 📊 **Análisis Malaga:** Excel donde se realiza el proyecto.
 
 - 📂 **Bloque 2: ** Proyecto creado con Power Bi, datos de Sevilla, obteniendo los datos con Python mediante la API de idealista.
@@ -270,14 +273,14 @@ Tras haber hecho el proceso de transformación de los datos ya tenerlos disponib
 
 **5.2.4 Explicación de los dashboard y uso**
 
-El proyecto de Power BI consta de 5 pantallas:
+El proyecto de Power BI consta de 5 pantalla.
 
 -	 **Principal:**
 
 En esta pantalla tienes 3 areas que ver. El apartado de arriba donde tienes un filtros basicos. En la parte central encuentras dos columnas, columnas y alquiler. En ellas puedes ver un recuento de las unidades y el precio de medio de la viviendas.
 Si presionas control y click encima de cualquiera de las cajas te llevara al dashboard en cuestion.
 
-- Precio-compra y alquiler:
+- **Precio-compra y alquiler:**
 
 Voy a explicar que graficos y como se puede utilizar las pantallas de precio ya que son similares en su estructura pero no en el contenido que aparece.
 
