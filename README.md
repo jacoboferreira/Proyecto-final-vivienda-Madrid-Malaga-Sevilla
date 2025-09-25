@@ -142,27 +142,32 @@ Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calc
 
 - Archivos evolutivos:
 
-	- **Fecha:** Fecha en meses a la que hace referencia.
-	- **Coste:** Coste del metro cuadrado a la fecha.
-	- **Área:** Área de la ciudad donde se encuentra el inmueble.
-	- **Negocio:** Si valor pertenece a compra o alquiler.
+- **Fecha:** Fecha en meses a la que hace referencia.
+- **Coste:** Coste del metro cuadrado a la fecha.
+- **Área:** Área de la ciudad donde se encuentra el inmueble.
+- **Negocio:** Si valor pertenece a compra o alquiler.
 
 En el caso del bloque 3 del proyecto se va a explicar también los datos:
-	- **Fecha:** Fecha en años a la que hace referencia.
-	- **Coste:** Coste del metro cuadrado a la fecha de la Comunidad de Madrid.
-	- **SM Madrid**: Evolución del salario bruto.	
-	- **SB anual:** Salario bruto anual de España.
-	- **Poblacion Madrid:** numero de residentes en la comunidad de Madrid.
-	- **Nº DE LICENCIA CONSTRUCCION:** Numero de licencias concedidas en España.
-	- **Nº DE EDIFICIOS:** Numero de edificios construidos en España.
-	- **Nº DE VIVIENDAS:** Numero de viviendas construidas en España.
+
+- **Fecha:** Fecha en años a la que hace referencia.
+- **Coste:** Coste del metro cuadrado a la fecha de la Comunidad de Madrid.
+- **SM Madrid**: Evolución del salario bruto.	
+- **SB anual:** Salario bruto anual de España.
+- **Poblacion Madrid:** numero de residentes en la comunidad de Madrid.
+- **Nº DE LICENCIA CONSTRUCCION:** Numero de licencias concedidas en España.
+- **Nº DE EDIFICIOS:** Numero de edificios construidos en España.
+- **Nº DE VIVIENDAS:** Numero de viviendas construidas en España.
 
 ## **5. Proceso llevado a cabo**
+
 Voy a explicar el proceso por partes, ya que a cada parte lo he querido crear con la intención de aprender, usar diferentes herramientas y metodología de obtener los datos.
+
 - ### **5.1. Bloque 1**
+
 Este primer bloque es una continuación y mejora del primer proyecto de análisis compra y alquiler. He mejorado el numero de viviendas, la obtención de información nueva como la ciudad y área, baños, etc. Expongo a continuación el proceso llevado.
 
 **5.1.1 Descarga de datos**
+
 Se utilizo la aplicación utilizada anteriormente pero con una suscripción mejor, la cual me permitía descargar de forma ilimitada la información. Seguía tenia las limitaciones de solo poder obtener la información de las portadas de los anuncios de idealista, a esto se le suma que en cada pagina solo tiene un máximo de 30 anuncios.
 El problema que tiene esta metodología es que tienes que repetir mucho el proceso y la información no se descarga ordenadamente. Cuando abres el archivo podías encontrar diferentes ordenes. Además, para poder obtener los baños antes de descargar la información tenia que filtrar en idealista. Cuando tenía descargada la información de un área, seleccionaba todos los documentos y con el comando de f2 le daba el nombre que quería y se ponían en todos con la diferencia de un numero entre paréntesis a si luego podía utilizarlo luego para poner el nombre del área en la columna.
 En el bloque puedes encontrar las 3 carpetas de alquiler, compra y evolutivo. De alquiler tengo 111 Excel con información. De compra 426 y de evolutivo 17.
