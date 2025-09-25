@@ -12,21 +12,25 @@ Por ello he realizado un análisis de rentabilidad a la hora de comprar y alquil
 Para observar de verdad si existe la clase media, como se ha visto afectada la evolución del precio de la vivienda y el de los salarios.
 
 El proyecto consta de 3 bloques. He querido hacer un tipo de Análisis o uso de herramienta para cada bloque, expongo delante un resumen de los bloques:
+
 •	Bloque 1:
 	o	Herramienta: Excel.
 	o	Ciudad: Málaga.
 	o	Informe: Precios, Unidades, Rentabilidad.
 	o	Obtención de datos: Aplicación Listly.io
+	
 •	Bloque 2:
 	o	Herramienta: Power BI.
 	o	Ciudad: Sevilla.
 	o	Informe: Precios, Unidades.
 	o	Obtención de datos: API idealista.
+	
 •	Bloque 3: 
 	o	Herramienta: Python.
 	o	Ciudad: Madrid.
 	o	Informe: Machine learning, Predicción a future y rentabilidad.
 	o	Obtención de datos: WEB Scraping idealista.
+	
 Mediante este proceso he querido desarrollar y experimentar mis conocimientos aprendidos con el programa de The Power MBA, Udemy y videos de YouTube. Para algunos de los procesos, me he apoyado de la herramienta Chat GPT.
 
 ## **2. Estructura del repositorio**
