@@ -114,16 +114,27 @@ Como he mencionado anteriormente el proyecto consta de 3 bloques. En su mayoría
 Hay que tener claro que los datos cuando se usan en herramientas como Python, a la hora que va avanzando el proyecto se pueden ir cambiando el numero de columnas y el nombre. 
 Por eso voy a exponer las principales columnas que tienen los archivos:
 	- **Archivos de alquiler y compra:**
+	
 	- **Título:** Nombre del anuncio.
+	
 	- **Ciudad:** Ciudad en la que se encuentra la vivienda.
+	
 	- **Coste:** Precio en euros.
+	
 	- **Habitaciones:** Número de habitaciones.
+
 	- **Metros cuadrados:** Superficie total del inmueble.
-	- **Planta:** Altura en la que esta el piso
+	
+	- **Planta:** Altura en la que esta el piso.
+	
 	- **Vivienda:** Tipo de inmueble (piso o casa).
+	
 	- **EXT – INT:** Si la vivienda da al exterior o interior.
+	
 	- **Área:** Área de la ciudad donde se encuentra el inmueble.
+	
 	- **Baños:** Numero de baños tiene el inmueble.
+	
 	- **Coste/Metro:** Precio del metro cuadrado.
 
 Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calculadas, negocio, ID del anuncio**.
