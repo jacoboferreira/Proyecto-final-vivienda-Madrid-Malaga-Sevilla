@@ -113,29 +113,30 @@ Para comprender y llevar a cabo el análisis, es importante tener conocimiento d
 Como he mencionado anteriormente el proyecto consta de 3 bloques. En su mayoría los datos son los mismos. Dentro de cada bloque del proyecto se dividen en otros tres apartados**compra, alquiler y evolutivo**. En el caso del ultimo también se han obtenido datos de páginas web oficiales del estado. 
 Hay que tener claro que los datos cuando se usan en herramientas como Python, a la hora que va avanzando el proyecto se pueden ir cambiando el numero de columnas y el nombre. 
 Por eso voy a exponer las principales columnas que tienen los archivos:
-	- **Archivos de alquiler y compra:**
-	
-	- **Título:** Nombre del anuncio.
-	
-	- **Ciudad:** Ciudad en la que se encuentra la vivienda.
-	
-	- **Coste:** Precio en euros.
-	
-	- **Habitaciones:** Número de habitaciones.
 
-	- **Metros cuadrados:** Superficie total del inmueble.
+	- Archivos de alquiler y compra.
 	
-	- **Planta:** Altura en la que esta el piso.
+	- Título: Nombre del anuncio.
 	
-	- **Vivienda:** Tipo de inmueble (piso o casa).
+	- Ciudad: Ciudad en la que se encuentra la vivienda.
 	
-	- **EXT – INT:** Si la vivienda da al exterior o interior.
+	- Coste: Precio en euros.
 	
-	- **Área:** Área de la ciudad donde se encuentra el inmueble.
+	- Habitaciones: Número de habitaciones.
+
+	- Metros cuadrados: Superficie total del inmueble.
 	
-	- **Baños:** Numero de baños tiene el inmueble.
+	- Planta: Altura en la que esta el piso.
 	
-	- **Coste/Metro:** Precio del metro cuadrado.
+	- Vivienda: Tipo de inmueble (piso o casa).
+	
+	- EXT – INT: Si la vivienda da al exterior o interior.
+	
+	- Área: Área de la ciudad donde se encuentra el inmueble.
+	
+	- Baños: Numero de baños tiene el inmueble.
+	
+	- Coste/Metro: Precio del metro cuadrado.
 
 Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calculadas, negocio, ID del anuncio**.
 
