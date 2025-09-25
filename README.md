@@ -227,3 +227,79 @@ o	Mes: Fecha a la que quieres visualizar el estado del negocio.
 o	Total Ingresado: la cantidad a la económica que se ha facturado hasta la fecha. 
 o	Total Beneficio: la parte de lo ingresado menos los gastos a la fecha.
 o	Total amortizado: cantidad económica y porcentual de la hipoteca a la fecha.
+
+
+- ### **5.2. Bloque 2**
+
+Este bloque del proyecto está centrado en otra metodología de obtención de datos, a traves de API's, asi como el uso de otra herramienta de visualización de datos, Power BI.
+
+**5.2.1 Descarga de datos**
+
+En este bloque hay dos apartados de información. La primera es la de información de los pisos. Descargada mediante API's de Idealista y la segunda cree un documento con información asociada a las viviedas para poder hacer un modelo de estralla. Permitiendo así que la información se puedise represantar mejor. Ahora expongo como lo realice:
+
+Gracias a los estudios del modulo y de videos que vi repetidas veces entendí que eran las API's y que tenia que hacer para el proceso. Por lo que me puse en contacto con idealista para que me permitiesen utilizar sus API's para realizar el proyecto. Me lo dieron mi Apikey y mi Secret, para poder conectarme. 
+
+El codigo utilizado lo consegui desarrollar leyendo y estudiando los pasos que me habia indicado idealista en un documento que me envio, ademas, utilice unos videos que encontre en youtube donde explicaba paso a pasos. El codigo que muestro en el proyecto es uno ya validado y puesto en claro, despues de hacer varios intento erroneos.
+
+En el codigo puedes encontrar en la primera parte las librerias que se necesitan, despue la funición para utilizar Apikey y el secret. Despues crear el mensaje que se tiene que enviar a idealista para que te permita el acceso y el porceso de uso de un token.
+
+La siguente parte es indicarle cuales son las caracteristicas de la información quieres acceder para descargar. Permitiendo así crear una lista con las pagianas que se han accedido y convirtiendolo posteriormente despues a dataframe.
+
+Para terminar se guarda la información en un csv. Esto dara paso a los siguientes pasos. Este proceso de obtención mediante API's se hizo tanto para alquiler como para compra. 
+
+El limite de desgarga que podia hacer al mes erá de 3000. Antes de empezar la descarga ya habia estudiado la cantiad de pisos de sevilla y habia unas 2000 viviendas de compra y otras 1000 de alquiler. Por lo que al ponerle un limite de distancia de un radio me iba a dejar una pocas viviendas fuera, teniendo que la información que mas me interesba estaba en el centro de la ciudad
+
+**5.2.2 Limpieza de los datos**
+
+La limpieza de los datos la realice con Power Queri. En ella realice los siguentes pasos:
+- Cambiar el nombre de las columnas.
+- Remplazar valores.
+- Eliminar columnas.
+- Crear columnas calculadas.
+- Separar información de columnas para crear nuevas.
+
+Este proceso lo hice para el archivo de alquiler como de compra.
+
+**5.2.3 Unión de la información**
+
+Tras haber hecho el proceso de transformación de los datos ya tenerlos disponibles en la vista de informes de Power BI, me di cuenta que la información no se me representaba bien. Por lo que cree otro documento en el cuales tuviese otras tablas que me permitiesen crear un modelo de estrella y usarlas para representar mejor la información.
+
+**5.2.4 Explicación de los dashboard y uso**
+
+El proyecto de Power BI consta de 5 pantallas:
+
+-	 **Principal:**
+
+En esta pantalla tienes 3 areas que ver. El apartado de arriba donde tienes un filtros basicos. En la parte central encuentras dos columnas, columnas y alquiler. En ellas puedes ver un recuento de las unidades y el precio de medio de la viviendas.
+Si presionas control y click encima de cualquiera de las cajas te llevara al dashboard en cuestion.
+
+- Precio-compra y alquiler:
+
+Voy a explicar que graficos y como se puede utilizar las pantallas de precio ya que son similares en su estructura pero no en el contenido que aparece.
+
+En el apartado de arriba hay una represantación mas amplia de filtros: tipo de casa, habitaciones, baños, garaje, tipo de vivienda. Ademas, de un boton para borrar todos los filtros y un navegador de página para volver a la principal.
+
+En el apartado de los graficos, empiezo por la izquierda un grafico de barras horizonales para representar el precio promedio por las plantas del edificio.  En la parte inferior podemos un grafico de tarta donde se representa el porcentaje de viviendas con garaje.
+
+En el centro de la pantalla hay tres graficos de barras verticales, en el que se puede ver asimple vista la diferencia de precios entre las casas y los pisos. Los graficos tiene en el eje X: habitaciones, esterior interior y parking.
+
+A la derecha de la pantalla se pueden ver diferentes tipos de cajas, arriba hay dos que muestrar el precio promedio de aluiler y compra. Debajo de estas 2, hay un grafico de mapa donde se utilizo como referencia el codigo postal. A la derecha de este un grafico de medidor en el que secalcula el % de rentabilidad. Se le indico un marcador de destino de un 6%. Abajo podemos encontrar dos tablas una para ver el ID y precio de ese inmueble. Por ultimo la tabla que esta a la derecha de esta se puede ver por municipio y distrito el tiempo de recuperación en años y % de recuperación.
+
+- **Unidades-alquiler y compra**:
+
+Los filtros de la parte superior son iguales a las pantallas anteriores. En cambio las cajas de este dashboard son algunos diferentes. En el lado de la izquierda se puede encontra un grafico de barras horizontales de donde se puede ver un recuento de pisos por planta.
+En el centro hay dos graficos de tarta donde se representa un recuento de las vivienda que dan al interior o exterior. y un recuento casas con los diferentes tipos de garajes.
+
+En el lateral derecho hay un grafico de barras para hacer un recuento unidades por habitaciones. También puedes ver un grafico de mapa y de treemap. Por ultimo, abajo de estos dos graficos hay una tabla donde se puede el recuento de unidades por municipio, distrito y tipo de viviendas.
+
+- ### **5.3. Bloque 3**
+
+**5.3.1 Descarga de datos**
+
+**5.3.2 Limpieza de los datos**
+
+**5.3.3 Unión de la información**
+
+**5.3.4 Explicación de los dashboard y uso**
+-	**Dashboard-€:**
+
