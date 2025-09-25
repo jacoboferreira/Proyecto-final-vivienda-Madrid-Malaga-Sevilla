@@ -141,6 +141,7 @@ Por eso voy a exponer las principales columnas que tienen los archivos:
 Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calculadas, negocio, ID del anuncio**.
 
 - Archivos evolutivos:
+
 	- **Fecha:** Fecha en meses a la que hace referencia.
 	- **Coste:** Coste del metro cuadrado a la fecha.
 	- **Área:** Área de la ciudad donde se encuentra el inmueble.
@@ -149,7 +150,7 @@ Además, existen otras columnas como: **R-Coste, Ascensor, Garaje, columnas calc
 En el caso del bloque 3 del proyecto se va a explicar también los datos:
 	- **Fecha:** Fecha en años a la que hace referencia.
 	- **Coste:** Coste del metro cuadrado a la fecha de la Comunidad de Madrid.
-	- **SM Madrid**: Evolución del salario bruto.
+	- **SM Madrid**: Evolución del salario bruto.	
 	- **SB anual:** Salario bruto anual de España.
 	- **Poblacion Madrid:** numero de residentes en la comunidad de Madrid.
 	- **Nº DE LICENCIA CONSTRUCCION:** Numero de licencias concedidas en España.
