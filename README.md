@@ -315,11 +315,26 @@ A la derecha de la pantalla se pueden ver diferentes tipos de cajas, arriba hay 
 Los filtros de la parte superior son iguales a las pantallas anteriores. En cambio las cajas de este dashboard son algunos diferentes. En el lado de la izquierda se puede encontra un grafico de barras horizontales de donde se puede ver un recuento de pisos por planta.
 En el centro hay dos graficos de tarta donde se representa un recuento de las vivienda que dan al interior o exterior. y un recuento casas con los diferentes tipos de garajes.
 
-En el lateral derecho hay un grafico de barras para hacer un recuento unidades por habitaciones. También puedes ver un grafico de mapa y de treemap. Por ultimo, abajo de estos dos graficos hay una tabla donde se puede el recuento de unidades por municipio, distrito y tipo de viviendas.
+En el lateral derecho hay un gráfico de barras para hacer un recuento unidades por habitaciones. También puedes ver un gráfico de mapa y de treemap. Por último, abajo de estos dos graficos hay una tabla donde se puede el recuento de unidades por municipio, distrito y tipo de viviendas.
+
+Una de las características de Power BI es la capacidad de poner información en la herramienta, así puedes visualizar más información como precio promedio, la mediana de precios, etc. En los graficos de los dashboard se han utilizado ya que aporta más información. 
+Es importante entender como funcionan las metodologías de filtro en Power BI. 
 
 - ### **5.3. Bloque 3**
-
+El bloque 3 es el último y más complejo. Es al que más tiempo le he dedicado y profundidad en cuanto a desarrollo. En el utilizo la metodología de Web Scraping para descargar la información y todo el proyecto se hace con Python. En el realizo un modelo de Maching Learning, un modelo de predicción a futuro de precios y un análisis de rentabilidad. En este caso he elegido la ciudad de Madrid.
 **5.3.1 Descarga de datos**
+Como he mencionado arriba el método utilizado en este caso para descargar la información, ha sido Web Scraping. Para ello tuve que leer información y consultar videos en los que explicaban como se tenia que hacer. La información descargada son 3, viviendas en venta, en alquiler y la evolución diferentes aspectos.
+Para explicar el proceso de descarga me voy a centrar en código de alquiler. Antes de empezar explicar características de Idealista. Limita el acceso si superar un Nº de anuncios y si superas más de 60 páginas. Esto limito la descarga de información en un solo día. También el bloqueador de captcha, al cual tenia que estar atento por que sino me bloqueaba la descarga. Además, cuando incluso los distritos tenían mas de 1200 inmuebles, tuve que poner un limitador. Durante el código le he incluido “print” para ir viendo lo que esta procesando.
+La información se sacaba de idealista, primero me tenia que meter desde un navegador a ver el distrito que me quería descargar y coger la URL. Reduciendo así en numero de viviendas y teniendo que replicar por cada distrito o municipio.
+El proceso se dividide en 3 partes, la primera obtener los id de los anuncios, posterior el proceso para parsear y lo último es guardar el archivo en un csv.
+Ahora voy a explicar más en detalle el código, es el siguiente, primero hay que pedirle a Python que abra una pantalla de Google Chrome, crear el valor de X, crear una lista para que posteriormente se vaya rellenando y el limitador. 
+Todo el proceso de obtener los ID en un bucle while true, para que pase por todas las páginas cogiendo los ID, hasta llegar al limitador o final de los anuncios.
+La siguiente parte del código se centra en parsear, esto es ir entrando en cada anuncio y seleccionar la información que se le ha indicado que busque en el código de la página Web. Se crea el código en una función para que se repita por cada anuncio. Se crea la variable que luego se ha va a pedir que te retorne y así se va ir creando cada fila. Los apartados seleccionados del codigo de idealista fueron los siguientes: id, titulo, localización, precio, características básicas, características extra, ubicación y edificio. Estos datos posteriormente tendrán que ser procesado y limpiados. 
+La siguiente parte del código lo que hace es crear un DataFrame donde se acumule la información de todos los anuncios y guardarlo en un csv. 
+
+Al timar el proceso de Scraping de alquiler y compra y empezar a limpiar los datos, me di cuenta que no había obtenido la información del edificio, lo que hace referencia a la planta, si es exterior o interior y si tiene ascensor. Aspectos importantes que influyen el precio y por lo tanto en el análisis. Por lo que tuve que repetir el proceso, pero solo para ese apartado. Cuando esto lo hice, pasaron ya unas semanas y descubrir que muchos de los anuncios ya no existían, por lo que pude comprobar la alta demanda y rotación que hay en Madrid.
+
+La descarga de la información de el evolutivo tuve que hacerla de diferentes formas ya que se me bloque el Scraping y no tuve forma de solucionarlo. Seleccione las mismas área de Madrid que en el bloque anterior y además me descargue información de salarios relacionados con la edad, sexo, año, comunidad autónoma y el evolutivo por comunidad autónoma. Estos datos fueron obtenidos de páginas oficiales del gobierno.
 
 **5.3.2 Limpieza de los datos**
 
