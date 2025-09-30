@@ -322,6 +322,7 @@ Es importante entender como funcionan las metodologías de filtro en Power BI.
 
 - ### **5.3. Bloque 3**
 El bloque 3 es el último y más complejo. Es al que más tiempo le he dedicado y profundidad en cuanto a desarrollo. En el utilizo la metodología de Web Scraping para descargar la información y todo el proyecto se hace con Python. En el realizo un modelo de Maching Learning, un modelo de predicción a futuro de precios y un análisis de rentabilidad. En este caso he elegido la ciudad de Madrid.
+
 **5.3.1 Descarga de datos**
 Como he mencionado arriba el método utilizado en este caso para descargar la información, ha sido Web Scraping. Para ello tuve que leer información y consultar videos en los que explicaban como se tenia que hacer. La información descargada son 3, viviendas en venta, en alquiler y la evolución diferentes aspectos.
 Para explicar el proceso de descarga me voy a centrar en código de alquiler. Antes de empezar explicar características de Idealista. Limita el acceso si superar un Nº de anuncios y si superas más de 60 páginas. Esto limito la descarga de información en un solo día. También el bloqueador de captcha, al cual tenia que estar atento por que sino me bloqueaba la descarga. Además, cuando incluso los distritos tenían mas de 1200 inmuebles, tuve que poner un limitador. Durante el código le he incluido “print” para ir viendo lo que esta procesando.
@@ -334,12 +335,51 @@ La siguiente parte del código lo que hace es crear un DataFrame donde se acumul
 
 Al timar el proceso de Scraping de alquiler y compra y empezar a limpiar los datos, me di cuenta que no había obtenido la información del edificio, lo que hace referencia a la planta, si es exterior o interior y si tiene ascensor. Aspectos importantes que influyen el precio y por lo tanto en el análisis. Por lo que tuve que repetir el proceso, pero solo para ese apartado. Cuando esto lo hice, pasaron ya unas semanas y descubrir que muchos de los anuncios ya no existían, por lo que pude comprobar la alta demanda y rotación que hay en Madrid.
 
-La descarga de la información de el evolutivo tuve que hacerla de diferentes formas ya que se me bloque el Scraping y no tuve forma de solucionarlo. Seleccione las mismas área de Madrid que en el bloque anterior y además me descargue información de salarios relacionados con la edad, sexo, año, comunidad autónoma y el evolutivo por comunidad autónoma. Estos datos fueron obtenidos de páginas oficiales del gobierno.
+La descarga de la información del evolutivo tuve que hacerla de diferentes formas ya que se me bloquo el Scraping y no tuve forma de solucionarlo. Seleccione las mismas áreas de Madrid que en el bloque anterior y además me descargue información de salarios relacionados con la edad, sexo, año, comunidad autónoma y el evolutivo por comunidad autónoma. Estos datos fueron obtenidos de páginas oficiales del gobierno.
 
-**5.3.2 Limpieza de los datos**
+**5.3.2 Preparación de los datos**
+5.3.2.1 Alquiler y compra
+Cuando ya había terminado la descarga, me di cuenta como mencioné de la falta de información del edificio. Repite el proceso entero. Posteriormente tenia que unificar la información en uno solo archivo. Por lo que primero tenia que unir los archivos de todas las áreas a uno solo y luego conectar mediante merge la información extra. Este proceso lo hice para los datos de alquiler y compra por separado, ya que la primera parte del análisis es un modelo de regresión (Machine Learning) de los pisos de compra, en otro documento realice una unión de los pisos de compra como de alquiler, para poder realizar un análisis de rentabilidad. 
+Ahora pasaré a explicar el proceso de tratamiento de los datos para poder llegar los análisis. 
+Lo primero que hice fue comprobar como podía dividir las columnas para extraer la información de forma correcta. En tres columnas tenia mucha información separada por una como, pero no podía hacer una separación simple ya que no sería eficaz. Se podía detectar unos patrones de texto que servían para poder separar  en diferentes columnas. Pasando de las columnas características básicas a (superficie_m2, superficie_utiles_m2, habitaciones, baños, terraza, estado, armarios_empotrados, orientación, año_construccion y calefacción), la columna de características_extra se dividio en: aire_acondicionado, certificado_cosumo, cert_emisiones. La columna de ubicación la dividí en calle,  barrio, distrito y ciudad. El siguiente paso que realice fue eliminar las columnas que ya no me interesaban (superficie_util_m2, cert_consumo, cert_emisiones, características_basicas, caracterisiticas_extra y ubicación). Trate también la columnas de orientación, para quedarme con solo la información que estaba delante de la coma. Posteriormente la borraría. 
+Ahora es cuando uniría la información que me decargue por segunda vez. Añadiendo, Planta, Ascensor y EXT-INT. Este DataFrame lo guarde como “datos_analizar_compras” (“datos_unificados_alquiler”).
 
-**5.3.3 Unión de la información**
 
-**5.3.4 Explicación de los dashboard y uso**
--	**Dashboard-€:**
+5.3.2.2 Evolutivo
+En cuanto a la información del evolutivo solo tuve que añadir con merge los documentos de las diferentes áreas. Posteriormente cuando fui analizar la información decidí solo coger la información de Madrid ciudad a nivel global, sin diferenciar por distrito. También para poder hacer mas enriquecido el análisis le añadí:
+- SM Madrid: Evolución del salario bruto.	
+- SB anual: Salario bruto anual de España.
+- Población Madrid: Número de residentes en la comunidad de Madrid.
+- Nº DE LICENCIA CONSTRUCCION: Número de licencias concedidas en España.
+- Nº DE EDIFICIOS: Numero de edificios construidos en España.
+- Nº DE VIVIENDAS: Número de viviendas construidas en España.
+Estos datos que acabo de mencionar están en descritos por año por lo que tuve que reducir la información que tenia del documento de evolutivo de meses a años para que pudiese coincidir, para hacer el análisis. 
 
+**5.3.3 Explicación del código**
+El proyecto lo realizo en un nuevo documento. Al que había estado antes trabajando. Tengo un total de 3 archivos. El primero que voy a desarrollar es de machine learning.
+-	**Codigo_proyecto_compra:**
+
+En este apartado voy a explicar el proceso y código que he utilizado para el proyecto de machine learning. Para conseguir continue procesando la información y realizando otros análisis antes. El procesado mencionado anteriormente, fue el básico que hice para luego empezar a trabajar. 
+Importante mencionar que como la base de datos era muy amplia, se decidió filtrar la información por pisos y de la ciudad de Madrid Descartando todas la viviendas de las afueras y tipo de vivienda casa, chalet, finca, etc.
+Para poder continuar con los análisis había que seguir tratando los datos. Antes de seguir explicándolo, mencionar que modifique las set_option para poder ver todas la columnas y texto de las celdas. 
+Siguientes pasos que realicé, crear una columna de vivienda, del título pude sacar de la primera palabra que tipo de vivienda era. Creando así una nueva columna. También pase las columnas habitaciones, baños, superficies_m2 y años de construcción a Inte64. El siguiente paso fue crear una columna del precio por metro cuadrado. Elimine las columnas de localización y calle. Cambie el texto de la columna superficie_m2 por m2.
+Ante de realizar el modelo predictivo del precio de la viviendas tengo que hacer mas limpieza de los datos y análisis. Lo primero que hice fue ver, el numero y porcentaje de nulos que tenia en las columnas. Después cree una columna nuva, categorizando las viviendas en dos tipos: piso y casa. 
+Elimine más columnas debido al número de nulos y creencia de poco valor predictivo de las columnas, terraza, orientación, año_construccion, calefacción. 
+También tuve que categorizar las plantas, para que todas tuviesen un valor numérico. Eliminando así esta columna, para quedarme con la nueva. También elimine la columna titulo y id.
+Posteriormente dividí las columnas en numéricas y categóricas. Esto me permitió hacer un bucle for para representar en un grafico de barras las columnas.
+Las columnas, estado, ascensor, EXT-INT, tipo de vivienda, armarios_empotrados, aire_acondicionado, los codifique.
+Realice una correlación con todas las variables para comprobar que columnas tenían mas peso en el pecio. Después, realice la primera regresión, con precio como variable predictora. El tamaño de X train es del 80% y de X_test es de 20%. En el primer caso utilice una regresión lineal. Pero posteriormente quise comprobar entre diferentes modelos cual era el mejor para predecir el valor del precio, eligiendo también los modelos Random Forest y Gradient Boosting.
+
+ -	**ANALISIS_RENTABILIDAD:**
+ 
+En esta parte del proyecto, quise analizar la rentabilidad de la compra y alquiler de viviendas mediante Pyhton. 
+Lo primero que hice fue abrir los dos archivos de alquiler y compra que tenia de Madrid. Para que el proceso fuese más limpio y eficaz me centre en las viviendas de tipo piso. El siguiente paso fue normalizar los nombres de las columnas para mas tarde conectarlas. 
+También cree una nueva columna en la que categorice las viviendas por cada 20 metros cuadrados. Intentando así poder utilizar los metros cuadrados dentro del análisis. 
+Cree una variable tanto para alquiler como para compra, en la que agrupe el valor de precio por barrio, distrito, habitaciones, baños y rango m2. Pudiendo así utilizar la formula de rentabilidad entres cada una de esas categorizaciones. Ya tienen esto solo queda representar los datos. La primera vez hacemos una representación de los 20 casos que mejor rentabilidad tienen y un grafico del distrito centro. 
+En el siguiente bloque de código creamos un bucle ‘for’ en el que un grafico y represente los 10 mejores casos por cada distrito.
+
+-	**PROYECTO_EVOLUTIVO_PRECIO:**
+
+Este es el último archivo del proyecto, en el he querido hacer un análisis de series temporales en el que predijese el precio de la vivienda teniendo en cuenta una serie de valores.
+El codigo de esté proyecto ya lo había trabajado y pulido en otro documento en el que había estado probando antes. La única diferencia es que como ya mencione antes los datos que abrir en este archivo no estaban en meses sino en años tuve que utilizar una fórmula para interpolar los datos a meses, ya que así se pueden analizar mejor. La predicción la realice 2 veces. La primera hasta la fecha de 06/2024 y la segunda hasta 2030.
+Voy a pasar a explicar el bloque del coodigo. Lo primero es abrir el archivo donde están los datos, se llama “Datos Evolutivos”, está en formato CSV. Lo siguiente es normalizar los nombre de las columnas, pasar a valor fecha la columna “Fecha”. Como he mencionado antes interpolar los datos a mes. Después de esto, ya se puede pasar a normalizar los datos para un mejor análisis. Ahora, toca la parte del codigo enfocado al modelo LSTM y su entrenamiento, indicando en el primer caso de unos 24 meses y hasta 2030. Ya lo que queda es representar en un grafico y una tabla los datos que arroja el modelo.
