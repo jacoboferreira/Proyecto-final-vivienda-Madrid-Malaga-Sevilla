@@ -1,6 +1,3 @@
-# README del Proyecto
-
-
 # **Situación actual de la vivienda en las ciudades de Madrid, Málaga y Sevilla.**
 Rentabilidad y posibilidades de compra en España a 2025.
 
